@@ -1,0 +1,41 @@
+
+def merge(array1,array2):
+    print(array2)
+    
+    idx1 =idx2=idx3=0
+    arraylength=len(array1)+len(array2)
+    print(idx3)
+    array3=[]
+    
+    while idx3 < arraylength:
+        print(idx3,idx2,idx1)
+
+        if len(array2)==(idx2):
+            array3.append(array1[idx1])
+            idx1 +=1 
+            idx3 +=1
+            print(array3)
+        elif len(array1)==(idx1): 
+            array3.append(array2[idx2])
+            idx2 +=1
+            idx3 +=1
+            print(array3)
+        elif array1[idx1]< array2[idx2]:
+            array3.append(array1[idx1])
+            idx1 +=1 
+            idx3 +=1
+            print(array3)
+        else:
+            array3.append(array2[idx2])
+            idx2 +=1
+            idx3 +=1
+            print(array3)
+
+    return array3
+    
+array2=[6,8,21,32]
+array1=[1,5,9,25,30]
+
+
+print(merge(array1,array2))
+print(result)
