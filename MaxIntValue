@@ -1,0 +1,24 @@
+#code
+def calcmax(T):
+    total = 0
+    for i in (T):
+        i = int(i)
+        if i <2 or total <2:
+            total = i + total
+           # print ("i+total in 0",i,total)
+        else:
+            total = i*total
+          #  print ("i+total not in 0",i,total)
+    return total
+    
+    
+i=0
+TotalTests=0    
+TotalTests=input()
+TotalTests= int(TotalTests)
+while i<TotalTests:
+    TC=input()
+    maxnum=calcmax(TC)
+    print (maxnum)
+    i=i+1
+
