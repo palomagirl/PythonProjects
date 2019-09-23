@@ -1,5 +1,8 @@
+#code
 def getpairs(findsum,l1,l2):
-    string=''
+    firstime = True
+    string=""
+    FoundVal = False
     findsum=findsum.split()
     lenl1=findsum[0]
     len2= findsum[1]
@@ -11,23 +14,28 @@ def getpairs(findsum,l1,l2):
     
     m1.sort()
     m2 = l2.split()
-    for i in range(0, len(m2)):
+    m3=set()
+    for i in range(0,len(m2)):
         m2[i]=int(m2[i])
+        m3.add(m2[i])
+    
     
     for a in range (0,len(m1)):
-        for b in range (0,len(m2)):
-            if(m1[a]+m2[b])==fs:
-                if len(string)>1 :
-                    string = string +", "
-                    string = string+str(m1[a])+" "+str(m2[b])
-                else:
-                    string = string+str(m1[a])+" "+str(m2[b])
-                    
-    if len(string)>0:
-        return (string)
-    else:
-        return "-1"
+        find=fs-m1[a]
+        try:
+            if find in m3:
+                if len(string)<1:
+                    string= str(m1[a])+" "+str(find)
+                else :
+                    string=string+", "+str(m1[a])+" "+str(find)
             
+        except:
+            continue
+        
+    if len(string)>1:
+        print(string)
+    else:
+        print ("-1")
         
 testcase=0
 caseline = 0
@@ -45,7 +53,8 @@ while testcase<TC:
         else:
             line2= input()
         caseline = caseline+1
-    pairlist=getpairs(firstline, line1, line2)
-    print(pairlist)
+    getpairs(firstline, line1, line2)
+   
     caseline = 0
     testcase=testcase+1
+
