@@ -1,0 +1,37 @@
+#code
+def anagram(s1,s2):
+    
+    s1=str(s1)
+    s2=str(s2)
+    if len(s1)!=len(s2):
+        print("NO")
+        return False
+    sorteds1= sorted(s1)
+    sorteds2= sorted(s2)
+    
+    for a in range(0, len(s1)):
+        if sorteds1[a]!=sorteds2[a]:
+            print("NO")
+            return False
+                
+    print('YES')
+    
+TC=input()
+TC=int(TC)
+
+case =0
+string=""
+
+while case < TC:
+    case=case+1
+    string=input()
+    
+    lst= string.split()
+    s1= lst[0]
+    s2=lst[1]
+    anagram(s1,s2)
+    
+    
+    
+    
+    
