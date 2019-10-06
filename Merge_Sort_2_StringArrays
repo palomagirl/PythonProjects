@@ -1,0 +1,53 @@
+#code
+def sortfunc(ar1,ar2):
+    # split string with spaces
+    ar1 = ar1.split()
+    ar2 = ar2.split()
+    
+    len1 =len(ar1)
+    len2 = len(ar2)
+    arr1=[]
+    arr2=[]
+    
+    # convert string arrays to list of int
+    for a in ar1:
+        arr1.append( int(a))
+    for a in ar2:
+        arr2.append( int(a))    
+    i=0
+    j=0
+    k=0
+    totln= len(arr1)+len(arr2)
+    result=[]
+    for k in range(0,totln):
+        #print("i:",i,'j:',j,)
+        if i == len(arr1)and j== len(arr2):
+            break
+        elif i>=len(arr1):
+            result.append(arr2[j])
+            j+=1
+        elif j>=len(arr2):
+            result.append(arr1[i])
+            i+=1
+        elif arr1[i]<arr2[j]:
+            result.append(arr1[i])
+            i+=1
+        elif arr1[i]>arr2[j]:
+            result.append(arr2[j])
+            j+=1
+        else: 
+            result.append(arr1[i])
+            i+=1
+    return result
+    
+ 
+
+usecase=int(input('No of Usecases:'))
+for x in range (usecase):
+    array1 = input("String Array 1:")
+    array2 = input("String Array 2:")
+    getlist=sortfunc(array1, array2)
+    
+    #Convert list to string again with spaces ' '.join
+    str1 = ' '.join(str(e) for e in getlist)
+    print(str1)
