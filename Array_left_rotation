@@ -26,8 +26,16 @@ if __name__ == '__main__':
     a = list(map(int, input().rstrip().split()))
 
     result = rotLeft(a, d)
-
+    
+    #convert result to string
     fptr.write(' '.join(map(str, result)))
     fptr.write('\n')
+    
+    #convert result list to string method 1
+    str2 = ' '.join(map(str,result))
+    print(str2)
+    #convert result list to string method 2
+    str1 = ' '.join(str(e) for e in result)
+    print(str1)
 
     fptr.close()
