@@ -1,0 +1,44 @@
+# A Python program to print all anagarms together 
+  
+# structure for each word of duplicate array 
+class fetchAnagram(object): 
+    def __init__(self, string, index): 
+        #self parameter is a reference to the current instance of the class, 
+        #and is used to access variables that belongs to the class.
+        self.string = string 
+        self.index = index 
+       # print("printing from init:",string,index)
+
+            
+    def newsort(self):
+        #print("printing from newsort:",self.string)
+      
+        hsorted={}
+        newlist=[]
+        
+        #store the sorted word as key and append values as list to the "key word" eg act:[pat,cat,act]
+        for word in range(0, self.index):
+            hsorted.setdefault((''.join(sorted(self.string[word]))),[] ).append( self.string[word]) 
+            
+        #combine all the values from the hash table into one list   
+        for k,v in hsorted.items():
+            print(k,v)
+            newlist.append(v)
+        print (newlist)
+        
+        #Flatten the Lists of list by looping through each list within and saving in flat_list
+        flat_list = []
+        for sublist in newlist:
+            for item in sublist:
+                flat_list.append(item)
+        print(flat_list)
+        
+
+        
+#Driver
+wordArr = ["pat", "dog", "tap", "god", "apt"] 
+size = len(wordArr) 
+#create object myanagram
+myanagram=fetchAnagram(wordArr, size)
+#call newsort function within class fetchanagram
+myanagram.newsort()
