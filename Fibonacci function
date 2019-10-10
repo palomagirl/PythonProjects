@@ -1,0 +1,25 @@
+def getfib(n):
+    f1=1
+    f0=0
+    
+    list=[]
+    list.append(0)
+    list.append(1)
+    for i in range (2,n+1):
+        list.append(list[i-1]+list[i-2])
+        
+    return list[n]
+print(getfib(5))
+
+#recursive O(n)**2
+def getfib(n):
+
+    if (n==0):
+        return 0
+    elif (n==1):
+        return 1
+    else:
+        #recursive
+        return getfib(n-1)+getfib(n-2)
+
+print(getfib(15))
