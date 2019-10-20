@@ -15,5 +15,5 @@ class Solution(object):
         return"".join(a)
 myobj=Solution()
 print(myobj.reverseStr('abcdefg',2))
-print(myobj.reverseStr('FoolPoolCoolToolRool',4))[i:i+k]))  
+print(myobj.reverseStr('FoolPoolCoolToolRool',4)) 
         
