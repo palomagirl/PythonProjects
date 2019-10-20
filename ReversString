@@ -1,0 +1,24 @@
+class Solution(object):
+    def reverseStr(self, s):
+        """
+        :type s: str
+        
+        :rtype: str
+        """
+        newlist=[]
+        rstr=""
+        print(len(s))
+        
+        #iterate from len(s), 7 to 0, backwards(-1)
+        for i in range (len(s), 0, -1):
+            #len of string -1 will give last element
+            #note s[i] i.e. s[7] is out of range, always start from 0 to n-1, therefore s[i-1]
+            print(i,s[i-1])
+            newlist.append(s[i-1])
+        print (newlist)
+        #join method to concatenate list to string
+        rstr="".join(newlist)
+        return rstr
+        
+myobj=Solution()
+print(myobj.reverseStr('abcdefg'))
