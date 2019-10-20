@@ -13,3 +13,7 @@ class Solution(object):
                 (a[i:i+k])=reversed(a[i:i+k])
                 print((a[i:i+k]))  
         return"".join(a)
+myobj=Solution()
+print(myobj.reverseStr('abcdefg',2))
+print(myobj.reverseStr('FoolPoolCoolToolRool',4))[i:i+k]))  
+        
