@@ -1,0 +1,17 @@
+#Given matrix of m*n consisting of 0,1 coun no of zeroes
+# Function should return the an integer
+def countZeroes(arr, n):
+    # Code here
+    cnt = 0
+    for i in range (0,n):
+        for j in range(0,len(arr[i])):
+            if arr[i][j] == 0:
+                cnt+=1
+            #print (arr[i][j])
+            
+    return cnt
+arr=[[0, 0, 1],[ 0, 1, 1],[ 0, 1, 1]]
+n=3
+print(countZeroes(arr,n))
+
+#Answer :4
