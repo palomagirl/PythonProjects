@@ -1,0 +1,28 @@
+#Reverse the first k characters only
+class Solution(object):
+    def reverseStr(self, s,k):
+        """
+        :type s: str
+        
+        :rtype: str
+        """
+        newlist=[]
+        rstr=""
+        reststr=''
+        print(len(s))
+        
+        #iterate from len(s), 7 to 0, backwards(-1)
+        for i in range (k, 0, -1):
+            #len of string -1 will give last element
+            #note s[i] i.e. s[7] is out of range, always start from 0 to n-1, therefore s[i-1]
+            print(i,s[i-1])
+            newlist.append(s[i-1])
+        print (newlist)
+        #join method to concatenate list to string
+        rstr="".join(newlist)
+        reststr="".join(s[k:])
+        return rstr+reststr
+        
+myobj=Solution()
+print(myobj.reverseStr('abcdefg',2))
+print(myobj.reverseStr('This is a reverse string',8))
