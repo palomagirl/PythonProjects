@@ -1,0 +1,29 @@
+
+if __name__ == '__main__':
+    hmap={}
+    lowest =0.0
+    second = 0.0
+    sec_name = []
+
+    for elem in range(int(input())):
+        name = input()
+        score = float(input())
+        hmap[name] = score
+    sorted_map = sorted(hmap.items(), key=lambda x: x[1])
+    
+    #print(sorted_map)
+  
+    for x,val in sorted_map:
+        elem -=1
+        if lowest == 0.0:
+            lowest = val
+        elif second ==0.0 and val != lowest:
+            second =val
+
+    for k ,v in sorted_map:
+        #print(second,v)
+        if v == second:
+            sec_name.append(k)
+    sec_name.sort()
+    for i in sec_name:
+        print (i)
