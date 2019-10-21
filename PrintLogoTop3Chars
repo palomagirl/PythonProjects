@@ -1,0 +1,55 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def printlogo(cnt,h1map):
+
+    dupsort= sorted(h1map.items(), key=lambda x: x[0])
+    for k1,v1 in dupsort:
+        if cnt<3:
+            print(k1,v1)
+            cnt +=1
+    return cnt
+
+def getlogo(s):
+    hmap={}
+    h1map={}
+    sorted_list=[]
+    cval=-1
+    pval=-1
+    pkey=''
+    ckey=''
+    cnt=0
+    for a in range(0,len(s)):
+        if s[a] in hmap:
+            hmap[s[a]]+=1
+        else:
+            hmap[s[a]]=1
+    #print(hmap)
+    sorted_map = sorted(hmap.items(), key=lambda x: x[1],reverse=True)
+    #print(sorted_map)
+    totel = len(sorted_map)
+    
+    for k ,v in sorted_map:
+        totel -=1
+      
+        if pval ==-1:
+           h1map[k]=v
+        elif pval ==v:
+            h1map[k]=v
+            if cnt <3 and totel ==0:
+                printlogo(cnt,h1map)
+        else:
+            cnt=printlogo(cnt,h1map)
+            h1map={}
+            h1map[k]=v
+        pval=v
+
+
+if __name__ == '__main__':
+    s = input()
+    getlogo(s)
