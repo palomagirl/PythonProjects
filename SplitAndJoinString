@@ -1,0 +1,14 @@
+def split_and_join(line):
+    # write your code here
+    s='-'
+    #split line at space and joing with '-'
+    newline = s.join(line.split())
+    return newline
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+    
+    #sample input:  This is a string
+    #sample output: This-is-a-string
