@@ -1,0 +1,8 @@
+def reversestring (instr):
+    mylist= instr.split()
+    s = ''
+    for i in mylist[::-1]:
+        s = s+" "+''.join(i) 
+    return(s)
+        
+print(reversestring('This is    a String'))
